@@ -1,0 +1,381 @@
+%!PS-Adobe-2.0
+%%Pages: 2
+%%Page: 1 1
+%  the programming one.
+%----------------------------------------
+% convert from inches to points
+%
+  /inch {72 mul} def
+%
+%  isolate list of strings to be printed as STRINGS
+%
+  /STRINGS {ARGS 8 get} def
+%------------------------------------------------------------
+% "carriage return" to beginning of next line
+%
+  /crlf {currentpoint ARGS 1 get inch sub exch
+         pop  0  exch moveto} def
+
+% takes start point, rotation
+/corner
+{
+
+   % outer stroke
+   0.2 0.2 0.2 setrgbcolor
+   0.25 setlinewidth
+   3 20 moveto
+   3  3 lineto
+   20 3 lineto
+   stroke
+   4 25 moveto
+   4  4 lineto
+   25 4 lineto
+   stroke
+   5 17 moveto
+   5  6 lineto
+   8  6 lineto
+   8  8 lineto
+   6  8 lineto
+   6  5  lineto
+   17 5  lineto
+   stroke
+} def
+
+/bracket
+{
+	0.5 inch 0.25 inch translate
+	corner
+	7.5 inch 0 inch translate
+	90 rotate
+	corner
+	10.60 inch 0 inch translate
+	90 rotate
+	corner
+	7.5 inch 0 inch translate
+	90 rotate
+	corner
+} def
+
+%
+%------------------------------------------------------------
+% finally, "prlines" itself -- invoked by placing the array
+%  of arguments on stack, then executing "prlines"
+%
+  /prlines
+   {/ARGS exch def
+     ARGS 0 get /textfont exch findfont def     % set up font
+     textfont ARGS 2 get scalefont setfont      % activate font
+%
+%     ARGS 3 get inch ARGS 4 get inch  moveto    % go to start point
+%
+     ARGS 3 get inch  ARGS 4 get inch  translate
+     ARGS 6 get  rotate
+      0 0  moveto
+     ARGS 7 get setgray
+      0 1 STRINGS length 1 sub
+       {STRINGS exch get show crlf} for         % print each string
+%
+     ARGS 6 get neg  rotate
+     ARGS 3 get inch neg  ARGS 4 get inch neg  translate
+         }  def
+
+ %%EndSetup
+ [ /TimesNewRoman
+ 0.2
+ 10.00
+  4.15   0.25
+ (ABSOLUTE)
+  0
+  0
+ [
+ (1 of 2)
+ ]] prlines
+
+
+[ /TimesNewRoman
+ 0.2
+ 14.00
+  3.77   10.7
+ (ABSOLUTE)
+  0
+  0
+ [
+(Nick Gully)
+]] prlines
+ [ /TimesNewRoman
+ 0.2
+ 12.00
+  2.50   10.73
+ (ABSOLUTE)
+  0
+  0
+ [
+()
+(nick@gully.org                    1054 Cook Street, Denver )
+((303) 319-9760                    gully.org/nick)
+ ]] prlines
+
+
+[ /TimesNewRoman
+ 0.25
+ 12.00
+  1.0   10.0
+ (ABSOLUTE)
+  0
+  0
+ [
+(I am adept at turning new ideas and hardware components into results and shipped products. )
+(I enjoy participating in technology development, support, and sales where I can contribute)
+(software, hardware, laboratory experience, and good humor to exciting products.)
+]] prlines
+
+[ /Courier-Bold
+ 0.19
+ 12.0
+  1.0   9.1
+ (ABSOLUTE)
+  0
+  0
+ [
+(Experience: C++/Javascript/C#  Linux/Windows/Mac OSX)
+]] prlines
+
+[ /Courier-Bold
+ 0.20
+ 10.00
+  1.0   8.8
+ (ABSOLUTE)
+  0
+  0
+ [
+ (Languages:    C++\(VC++/clang\), Javascript, C#, HTML 4.999... )
+ (Libraries:    boost, jquery, backbone.js, require.js, d3.js)
+ (Environments: .NET MVC5, nginx, node.js, Linode, Amazon Web Services, )
+ (              Microsoft Azure  )
+ (Tools:        TFS, git, Jenkins, Fiddler, Wireshark, browser F12 tools,)
+ (              SQL scripts, JustMock  )
+]] prlines
+
+[ /TimesNewRoman
+ 0.22
+ 13.00
+  1.0  7.5
+ (ABSOLUTE)
+  0
+  0
+ [
+(Manager of Software Development, Browser Application Team)
+(ShopAtHome.com June 2015-present)
+]] prlines
+
+[ /TimesNewRoman
+ 0.25
+ 12.00
+  1.0   7.0
+ (ABSOLUTE)
+  0
+  0
+ [
+(   \267 Managing a team of five programmers and enabling communication between groups.   )
+(   \267 Orchestrating software releases across changes in server, CDN, and browser extensions.)
+(   \267 In charge of turning generic errors and complaints into code-specific User Stories. )
+(   \267 Member of Architecture team working to increase productivity and performance through)
+(     platform-wide changes, most recently using Dapper.NET to streamline database accesses. )
+(   \267 Continuing to contribute code and design to products. )
+		]] prlines
+
+[ /TimesNewRoman
+ 0.22
+ 13.00
+  1.0   5.1
+ (ABSOLUTE)
+  0
+  0
+ [
+(Senior Software Engineer - Full Stack)
+(ShopAtHome.com March 2013- June 2015)
+]] prlines
+
+[ /TimesNewRoman
+ 0.25
+ 12.00
+  1.0   4.6
+ (ABSOLUTE)
+  0
+  0
+ [
+(   \267 Development of Toolbar applications for all major browsers in C++ \(IE\) and)
+(     Javascript \(Chrome, Firefox, Safari\). )
+(   \267 Using Unit and Integration tests to validate business logic in browser extensions and)
+(     supporting backend web servers. )
+(   \267 Use of Boost libraries to increase performance, remove bloat, and clarify business logic.   )
+(   \267 Using backbone.js for dynamic UX construction and delivery.)
+(   \267 Moved projects to automatic builds within Jenkins.)
+(   \267 Refactored IE Toolbar C++ code to remove need for UAC elevation and cut down)
+(     installer size by a third. Successful installations dramatically increased.)
+(   \267 Wrote application services, unit tests, and SQL procedures for backend servers)
+(     handling millions of requests every day from active Toolbars.)
+(   \267 Wrote C# service emitting compact javascript of business logic for thousands)
+(     of merchants and rules into an easily cacheable file on CDN networks.)
+(   \267 Conceived, designed, and implemented a remote rescue plan for eighty thousand )
+(     Toolbars broken by IE11 auto-upgrading to get them working for customers again.)
+(   \267 Working with five programmers and four testers in two week "Agile" sprints.)
+]] prlines
+
+
+bracket
+showpage
+
+%%Page: 2 2
+[ /TimesNewRoman
+ 0.20
+13.00
+  1.0   10.2
+ (ABSOLUTE)
+  0
+  0
+ [
+(Lighting Engineer and Programmer - Independent Testing Laboratories, Inc. 2008-2013)
+]] prlines
+[ /TimesNewRoman
+ 0.22
+12.00
+  1.0   10.0
+ (ABSOLUTE)
+  0
+  0
+ [
+(   \267 Design, development, and support of a Win32 multi-threaded C++ application for)
+(     operation of custom large photometric instruments \(goniophotometers and)
+(     spectroradiometers\), overseeing hardware design and instrument protocol, including)
+(     multi-sensor spatial color readings. In use internally and at several large lighting)
+(     manufacturers. Included a small http server for a web interface.)
+(   \267 Engineer responsible for report approvals and interacting with customers.)
+(   \267 Maintaining a world-class reputation for accurate reporting, became one of two)
+(     laboratories chosen for validation of Department of Energy L-Prize contestants.)
+(   \267 Design, maintenance, and improvement of in-house report generation tools)
+(     calculating industry metrics and producing output in Postscript for reports.)
+(   \267 Training, management, and scheduling for technicians and a programmer in a )
+(     laboratory growing at 30% a year for over four years.)
+(   \267 Design, management, and oversight of lamp life tests for government and)
+(     private industry, tracking and measuring thousands of samples.)
+(   \267 Setup and maintenance of Debian GNU/Linux servers for all company documents with multiple)
+(     redundancies and geographic locations.)
+(   \267 Participated in gaining and maintaining NIST NVLAP Laboratory Accreditation,)
+(     including document preparation, on site laboratory inspection, calibration)
+(     certification and laboratory health monitoring.)
+]] prlines
+
+[ /TimesNewRoman
+ 0.22	13.00	0.9   5.7
+ (ABSOLUTE)
+  0
+  0
+ [
+(Software Contractor- Independent Testing Laboratories, Inc. 2004-2007)
+]] prlines
+
+ [ /TimesNewRoman
+ 0.22
+ 12.00
+  1   5.5
+ (ABSOLUTE)
+  0
+  0
+ [
+(   \267 Software development in C++ for an AutoCAD plugin tool for lighting calculations and)
+(     rendering of architectural and roadway environments.)
+]] prlines
+
+[ /TimesNewRoman
+ 0.22
+ 13.00
+  0.9   5.0
+ (ABSOLUTE)
+  0
+  0
+ [
+(Software Engineer - Lighting Analysts, Inc. 2000-2004)
+]] prlines
+
+[ /TimesNewRoman
+ 0.22
+ 12.00
+  1.0   4.8
+ (ABSOLUTE)
+  0
+  0
+ [
+(   \267 Software developer on AGI32, a program for lighting calculations for interior and)
+(     exterior design in C++ and VB6. User interface, direct and indirect lighting calculations)
+(     in complex geometric environments, and a variety of file format parsers. OpenGL drawing )
+(     of architectural environments and photometric data)
+(   \267 Setup, maintenance, and security of a webserver for customer software downloading. Reduced)
+(     the installer size in half to facilitate moving from CD to internet distribution of )
+(     software. (Apache / mod_perl / Apache C modules / MySQL) )
+(   \267 Conceived and organized educational version offered free to Universities with lighting )
+(     design curricula, which helped the software corner the market in accurate lighting )
+(     calculation software.)
+(   \267 Wrote a parser of the ACIS solid modeling file format to allow customers to import complex )
+(     architectural models.)
+(   \267 Wrote the TCP/IP license server and client library for company-wide licensing agreements )
+(   \267 Attended trade shows to provide direct technical sales support and training.)
+]] prlines
+
+
+[ /TimesNewRoman
+ 0.22
+ 13.00
+  0.9   1.6
+ (ABSOLUTE)
+  0
+  0
+ [
+(Education: University of Colorado - Boulder 1999)
+]] prlines
+
+[ /TimesNewRoman
+ 0.22
+ 12.00
+  1   1.4
+ (ABSOLUTE)
+  0
+  0
+ [
+(   \267 Architectural Engineering with Illumination Engineering emphasis.)
+(   \267 Minor in Computer Science, emphasis on numerical algorithms.)
+(   \267 Student administrator for CU Civil Engineering department of a mixed Solaris / NT lab.)
+ ]] prlines
+
+[ /TimesNewRoman
+ 0.22
+ 13.00
+  0.9   0.7
+ (ABSOLUTE)
+  0
+  0
+ [
+(Hobbies:)
+]] prlines
+
+[ /TimesNewRoman
+ 022
+ 12.00
+  1  0.5
+ (ABSOLUTE)
+  0
+  0
+ [
+ (   \267 Home Repair, Biking, Hiking, Model railroading, running my own web/mail services. )
+ ]] prlines
+[ /TimesNewRoman
+ 0.2 10.00 4.15   0.25
+ (ABSOLUTE)  0  0
+ [
+ (2 of 2)
+ ]] prlines
+
+
+bracket
+
+ showpage
